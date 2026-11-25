@@ -1,0 +1,20 @@
+2026-11-25T06:43:42Z waiter start
+2026-11-25T06:43:58Z getHealth OK (1/3) minute 1
+2026-11-25T06:44:27Z getHealth OK (2/3) minute 2
+2026-11-25T06:44:56Z getHealth OK (3/3) minute 3
+2026-11-25T06:44:56Z egress stable, checking buffers
+
+Buffer Address                               | Authority                                    | Balance
+AEUvTasCxnskAGZXJLyRGJ5P7Jg5NpiChPqiaH4a8SUu | 4QyGboukYFcc4AvZV45yRDXCbsMZjUo9E2xdKnVmcjgC | 1.78428396 SOL
+
+2026-11-25T06:45:08Z closing buffer AEUvTasCxnskAGZXJLyRGJ5P7Jg5NpiChPqiaH4a8SUu
+
+Buffer Address                               | Authority                                    | Balance
+AEUvTasCxnskAGZXJLyRGJ5P7Jg5NpiChPqiaH4a8SUu | 4QyGboukYFcc4AvZV45yRDXCbsMZjUo9E2xdKnVmcjgC | 1.78428396 SOL
+
+4.9997 SOL
+2026-11-25T06:45:19Z starting anchor program deploy
+Deploying program: tap_rush
+Error: Data writes to account failed: Custom error: Max retries exceeded
+DEPLOY_EXIT=1
+2026-11-25T06:51:34Z waiter done

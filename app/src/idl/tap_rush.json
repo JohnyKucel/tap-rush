@@ -1,0 +1,776 @@
+{
+  "address": "PUZyzzFpJue8Yj95KoEVh6863zUhqJMFVdHjZmgBi5N",
+  "metadata": {
+    "name": "tap_rush",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Tap Rush — real-time tap race on Solana Ephemeral Rollups (Blitz v10)"
+  },
+  "instructions": [
+    {
+      "name": "commit",
+      "docs": [
+        "Manually commit the delegated account state back to devnet."
+      ],
+      "discriminator": [
+        223,
+        140,
+        142,
+        165,
+        229,
+        208,
+        156,
+        74
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "round",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  116,
+                  97,
+                  112,
+                  45,
+                  114,
+                  117,
+                  115,
+                  104
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "payer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "magic_program",
+          "address": "Magic11111111111111111111111111111111111111"
+        },
+        {
+          "name": "magic_context",
+          "writable": true,
+          "address": "MagicContext1111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "delegate",
+      "docs": [
+        "Delegate the player round account to the Ephemeral Rollup."
+      ],
+      "discriminator": [
+        90,
+        147,
+        75,
+        178,
+        85,
+        88,
+        4,
+        137
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "signer": true
+        },
+        {
+          "name": "buffer_pda",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  98,
+                  117,
+                  102,
+                  102,
+                  101,
+                  114
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pda"
+              }
+            ],
+            "program": {
+              "kind": "const",
+              "value": [
+                5,
+                193,
+                243,
+                37,
+                148,
+                1,
+                174,
+                114,
+                179,
+                155,
+                168,
+                152,
+                171,
+                214,
+                74,
+                48,
+                106,
+                177,
+                132,
+                32,
+                111,
+                109,
+                159,
+                105,
+                41,
+                225,
+                3,
+                218,
+                49,
+                71,
+                111,
+                65
+              ]
+            }
+          }
+        },
+        {
+          "name": "delegation_record_pda",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  100,
+                  101,
+                  108,
+                  101,
+                  103,
+                  97,
+                  116,
+                  105,
+                  111,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pda"
+              }
+            ],
+            "program": {
+              "kind": "account",
+              "path": "delegation_program"
+            }
+          }
+        },
+        {
+          "name": "delegation_metadata_pda",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  100,
+                  101,
+                  108,
+                  101,
+                  103,
+                  97,
+                  116,
+                  105,
+                  111,
+                  110,
+                  45,
+                  109,
+                  101,
+                  116,
+                  97,
+                  100,
+                  97,
+                  116,
+                  97
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pda"
+              }
+            ],
+            "program": {
+              "kind": "account",
+              "path": "delegation_program"
+            }
+          }
+        },
+        {
+          "name": "pda",
+          "docs": [
+            "CHECK The PDA to delegate"
+          ],
+          "writable": true
+        },
+        {
+          "name": "owner_program",
+          "address": "PUZyzzFpJue8Yj95KoEVh6863zUhqJMFVdHjZmgBi5N"
+        },
+        {
+          "name": "delegation_program",
+          "address": "DELeGGvXpWV2fqJUhqcF5ZSYMS4JTLjteaAMARRSaeSh"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "finish_round",
+      "docs": [
+        "End the round: keep the best score, commit the state back to devnet",
+        "and undelegate the account from the Ephemeral Rollup."
+      ],
+      "discriminator": [
+        23,
+        104,
+        163,
+        186,
+        110,
+        225,
+        11,
+        242
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "round",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  116,
+                  97,
+                  112,
+                  45,
+                  114,
+                  117,
+                  115,
+                  104
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "payer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "magic_program",
+          "address": "Magic11111111111111111111111111111111111111"
+        },
+        {
+          "name": "magic_context",
+          "writable": true,
+          "address": "MagicContext1111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "initialize_player",
+      "docs": [
+        "Create the player round account if it does not exist yet."
+      ],
+      "discriminator": [
+        79,
+        249,
+        88,
+        177,
+        220,
+        62,
+        56,
+        128
+      ],
+      "accounts": [
+        {
+          "name": "round",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  116,
+                  97,
+                  112,
+                  45,
+                  114,
+                  117,
+                  115,
+                  104
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "user"
+              }
+            ]
+          }
+        },
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "process_undelegation",
+      "discriminator": [
+        196,
+        28,
+        41,
+        206,
+        48,
+        37,
+        51,
+        167
+      ],
+      "accounts": [
+        {
+          "name": "base_account",
+          "writable": true
+        },
+        {
+          "name": "buffer",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  117,
+                  110,
+                  100,
+                  101,
+                  108,
+                  101,
+                  103,
+                  97,
+                  116,
+                  101,
+                  45,
+                  98,
+                  117,
+                  102,
+                  102,
+                  101,
+                  114
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "base_account"
+              }
+            ],
+            "program": {
+              "kind": "const",
+              "value": [
+                181,
+                183,
+                0,
+                225,
+                242,
+                87,
+                58,
+                192,
+                204,
+                6,
+                34,
+                1,
+                52,
+                74,
+                207,
+                151,
+                184,
+                53,
+                6,
+                235,
+                140,
+                229,
+                25,
+                152,
+                204,
+                98,
+                126,
+                24,
+                147,
+                128,
+                167,
+                62
+              ]
+            }
+          }
+        },
+        {
+          "name": "payer",
+          "writable": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "account_seeds",
+          "type": {
+            "vec": "bytes"
+          }
+        }
+      ]
+    },
+    {
+      "name": "record_score",
+      "docs": [
+        "Base-layer only: copy the player's best score into the global",
+        "leaderboard when it beats the current top score."
+      ],
+      "discriminator": [
+        30,
+        181,
+        94,
+        137,
+        7,
+        160,
+        236,
+        158
+      ],
+      "accounts": [
+        {
+          "name": "round",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  116,
+                  97,
+                  112,
+                  45,
+                  114,
+                  117,
+                  115,
+                  104
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "user"
+              }
+            ]
+          }
+        },
+        {
+          "name": "leaderboard",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  108,
+                  101,
+                  97,
+                  100,
+                  101,
+                  114,
+                  98,
+                  111,
+                  97,
+                  114,
+                  100
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "start_round",
+      "docs": [
+        "Start a fresh 10-second round. Resets the tap counter."
+      ],
+      "discriminator": [
+        144,
+        144,
+        43,
+        7,
+        193,
+        42,
+        217,
+        215
+      ],
+      "accounts": [
+        {
+          "name": "round",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  116,
+                  97,
+                  112,
+                  45,
+                  114,
+                  117,
+                  115,
+                  104
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "user"
+              }
+            ]
+          }
+        },
+        {
+          "name": "user",
+          "signer": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "tap",
+      "docs": [
+        "One tap. Only counts while the round is active and inside the window."
+      ],
+      "discriminator": [
+        31,
+        254,
+        225,
+        122,
+        3,
+        186,
+        67,
+        245
+      ],
+      "accounts": [
+        {
+          "name": "round",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  116,
+                  97,
+                  112,
+                  45,
+                  114,
+                  117,
+                  115,
+                  104
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "user"
+              }
+            ]
+          }
+        },
+        {
+          "name": "user",
+          "signer": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "undelegate",
+      "docs": [
+        "Undelegate the player round account from the Ephemeral Rollup."
+      ],
+      "discriminator": [
+        131,
+        148,
+        180,
+        198,
+        91,
+        104,
+        42,
+        238
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "round",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  116,
+                  97,
+                  112,
+                  45,
+                  114,
+                  117,
+                  115,
+                  104
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "payer"
+              }
+            ]
+          }
+        },
+        {
+          "name": "magic_program",
+          "address": "Magic11111111111111111111111111111111111111"
+        },
+        {
+          "name": "magic_context",
+          "writable": true,
+          "address": "MagicContext1111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Leaderboard",
+      "discriminator": [
+        247,
+        186,
+        238,
+        243,
+        194,
+        30,
+        9,
+        36
+      ]
+    },
+    {
+      "name": "PlayerRound",
+      "discriminator": [
+        39,
+        0,
+        149,
+        242,
+        74,
+        67,
+        91,
+        124
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "RoundNotActive",
+      "msg": "No round is active right now."
+    },
+    {
+      "code": 6001,
+      "name": "RoundOver",
+      "msg": "The 10-second round is over."
+    }
+  ],
+  "types": [
+    {
+      "name": "Leaderboard",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "top_player",
+            "type": "pubkey"
+          },
+          {
+            "name": "top_score",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlayerRound",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "taps",
+            "type": "u64"
+          },
+          {
+            "name": "best",
+            "type": "u64"
+          },
+          {
+            "name": "round_start",
+            "type": "i64"
+          },
+          {
+            "name": "active",
+            "type": "bool"
+          }
+        ]
+      }
+    }
+  ]
+}

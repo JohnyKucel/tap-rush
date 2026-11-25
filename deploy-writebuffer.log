@@ -1,0 +1,33 @@
+2026-11-25T06:54:35Z waiter v2 start
+2026-11-25T06:54:51Z getHealth OK (1/3) minute 1
+2026-11-25T06:55:18Z getHealth OK (2/3) minute 2
+2026-11-25T06:55:51Z getHealth OK (3/3) minute 3
+2026-11-25T06:55:51Z egress stable, cleaning leftover buffers
+2026-11-25T06:55:58Z closing buffer FkiCYCz8F3dXtjDeu9d2wwMCQZKi3oCEhuj1xxYoDHoE
+
+Buffer Address                               | Authority                                    | Balance
+FkiCYCz8F3dXtjDeu9d2wwMCQZKi3oCEhuj1xxYoDHoE | 4QyGboukYFcc4AvZV45yRDXCbsMZjUo9E2xdKnVmcjgC | 1.78428396 SOL
+
+4.999605 SOL
+Wrote new keypair to buffer-keypair.json
+2026-11-25T06:56:13Z buffer keypair: 8oy4cG8v9VJfBfsYcjXYKgJY6xVc5wwyosV9hk8rUWF7
+2026-11-25T06:56:13Z write-buffer attempt 1
+Error: Data writes to account failed: Custom error: Max retries exceeded
+2026-11-25T07:02:03Z write-buffer attempt 1 exit=1
+Error: error sending request for url (https://api.devnet.solana.com/)
+2026-11-25T07:03:04Z write-buffer attempt 2
+Error: error sending request for url (https://api.devnet.solana.com/)
+2026-11-25T07:03:34Z write-buffer attempt 2 exit=1
+Error: error sending request for url (https://api.devnet.solana.com/)
+2026-11-25T07:04:34Z write-buffer attempt 3
+Error: Data writes to account failed: Custom error: Max retries exceeded
+2026-11-25T07:13:32Z write-buffer attempt 3 exit=1
+Error: error sending request for url (https://api.devnet.solana.com/)
+2026-11-25T07:14:33Z write-buffer attempt 4
+Error: error sending request for url (https://api.devnet.solana.com/)
+2026-11-25T07:15:03Z write-buffer attempt 4 exit=1
+Error: error sending request for url (https://api.devnet.solana.com/)
+2026-11-25T07:16:03Z write-buffer attempt 5
+Buffer: 8oy4cG8v9VJfBfsYcjXYKgJY6xVc5wwyosV9hk8rUWF7
+
+2026-11-25T07:23:38Z write-buffer attempt 5 exit=0

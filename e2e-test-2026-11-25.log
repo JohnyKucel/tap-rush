@@ -1,0 +1,36 @@
+[07:30:45] wallet (deploy): 4QyGboukYFcc4AvZV45yRDXCbsMZjUo9E2xdKnVmcjgC
+[07:30:45] temp keypair: 4UGDQwHW2Ce6EtrrbFA3VwpzSueNDDUEojfziwcgityz
+[07:30:45] player PDA: H44VunE4R6Xc3yMjzAFAZq4z6siFc7PMDrCxTUcWegH9
+[07:30:45] leaderboard PDA: E5XBwGNkTkgAJeAXuK9JWFhwyx5wNBW29DAGampn5hNW
+[07:30:57] wallet balance: 2.71221728 SOL
+[07:30:57] temp balance: 0.49284668 SOL
+[07:30:57] cleanup: existing round taps=0 best=0 active=false
+[07:31:05] cleanup: undelegate OK (ER) 3232ms https://explorer.solana.com/tx/2hUaTQrGo38E7Bqd4ab74bGVWGXhChXKdEMWsiiSsQhkbouhsBXFzUMwSdn22ikx1xVVzLxVh3LxxiSHU69ayz7U?cluster=custom&customUrl=https%3A%2F%2Fdevnet-as.magicblock.app
+[07:31:16] 1. initialize_player OK 920ms https://explorer.solana.com/tx/5LVndkx3txMqAWbbGbMEpJczWbm8jioFtek2RDi7MUR2TMA2HD7RYQn1iTbNsJhFj5gdeaP6gC3Sjf2jK9n4hse9?cluster=devnet
+[07:31:19] 2. delegate OK (no validator arg) 2230ms https://explorer.solana.com/tx/2MiZQY54bwbsk5uJjmCoEsvWo6qgDUmQac9ojRNmP9RjG5SPhzzKaimSfVjHUDt7WYAAJcjZXFNfZdEkVvNEsx6q?cluster=devnet
+[07:31:40] 3+4. start_round + 5 taps OK in one ER tx 14846ms https://explorer.solana.com/tx/4b79AhXX219T6C9u7ZekmifrNJ8JfMqydborW4QwCE8fT2xTTuSyNdHEDdTUKeNvebXdX2AC3hDD6QByshhDDfYF?cluster=custom&customUrl=https%3A%2F%2Fdevnet-as.magicblock.app
+[07:31:53] 5. finish_round OK (ER) 6705ms https://explorer.solana.com/tx/66Hmi5CsAPBNCigzttdy9PMig2jwexmzmkgiZVwVnETd8JMwkSVJPBpo6DfRxyKMBYKar1qKVB5GPzYiLA9fwvY3?cluster=custom&customUrl=https%3A%2F%2Fdevnet-as.magicblock.app
+[07:31:59] 6. round on base: taps=5 best=5 active=false player=4UGDQwHW2Ce6EtrrbFA3VwpzSueNDDUEojfziwcgityz
+[07:32:02] 7. record_score OK 2305ms https://explorer.solana.com/tx/5m5kk3Uuczup2gK5Tywkxuq8gVA4AooqLNUr3v8LXB2ugoYQj8dj65kFGrfobUnW5pPPiynAmEHZmivYeqisXS81?cluster=devnet
+[07:32:02] 8. leaderboard on base: top_score=5 top_player=4UGDQwHW2Ce6EtrrbFA3VwpzSueNDDUEojfziwcgityz
+
+=== E2E RESULT: PASS ===
+{
+  "initialize": "5LVndkx3txMqAWbbGbMEpJczWbm8jioFtek2RDi7MUR2TMA2HD7RYQn1iTbNsJhFj5gdeaP6gC3Sjf2jK9n4hse9",
+  "delegate": "2MiZQY54bwbsk5uJjmCoEsvWo6qgDUmQac9ojRNmP9RjG5SPhzzKaimSfVjHUDt7WYAAJcjZXFNfZdEkVvNEsx6q",
+  "taps": [
+    "4b79AhXX219T6C9u7ZekmifrNJ8JfMqydborW4QwCE8fT2xTTuSyNdHEDdTUKeNvebXdX2AC3hDD6QByshhDDfYF"
+  ],
+  "startRound": "4b79AhXX219T6C9u7ZekmifrNJ8JfMqydborW4QwCE8fT2xTTuSyNdHEDdTUKeNvebXdX2AC3hDD6QByshhDDfYF",
+  "finishRound": "66Hmi5CsAPBNCigzttdy9PMig2jwexmzmkgiZVwVnETd8JMwkSVJPBpo6DfRxyKMBYKar1qKVB5GPzYiLA9fwvY3",
+  "round": {
+    "taps": 5,
+    "best": 5,
+    "active": false
+  },
+  "recordScore": "5m5kk3Uuczup2gK5Tywkxuq8gVA4AooqLNUr3v8LXB2ugoYQj8dj65kFGrfobUnW5pPPiynAmEHZmivYeqisXS81",
+  "leaderboard": {
+    "topScore": 5,
+    "topPlayer": "4UGDQwHW2Ce6EtrrbFA3VwpzSueNDDUEojfziwcgityz"
+  }
+}

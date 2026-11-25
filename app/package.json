@@ -1,0 +1,39 @@
+{
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.32.1",
+    "@magicblock-labs/ephemeral-rollups-sdk": "0.14.3",
+    "@solana/wallet-adapter-base": "0.9.23",
+    "@solana/wallet-adapter-react": "0.15.35",
+    "@solana/wallet-adapter-react-ui": "0.9.35",
+    "@solana/wallet-adapter-wallets": "0.19.32",
+    "@solana/web3.js": "^1.98.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "overrides": {
+    "@types/react": "18.3.32",
+    "@types/react-dom": "18.3.7",
+    "@solana/wallet-adapter-react": "0.15.35"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.32",
+    "@types/react-dom": "18.3.7",
+    "@vitejs/plugin-react": "^4.3.1",
+    "typescript": "^5.4.3",
+    "vite": "^5.4.8",
+    "vite-plugin-node-polyfills": "^0.22.0"
+  },
+  "name": "tap-rush-app",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "copy-idl": "mkdir -p src/idl && (cp ../program/target/idl/tap_rush.json src/idl/ 2>/dev/null || echo '[copy-idl] ../program/target/idl/tap_rush.json not found \u2014 using committed src/idl/tap_rush.json placeholder')",
+    "dev": "vite",
+    "prebuild": "npm run copy-idl",
+    "predev": "npm run copy-idl",
+    "preview": "vite preview",
+    "typecheck": "tsc -b"
+  },
+  "type": "module",
+  "version": "0.1.0"
+}

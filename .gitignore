@@ -1,0 +1,14 @@
+# Keypairs — devnet-only secrets, NEVER commit (deploy wallet, program, buffer)
+*-keypair.json
+**/*-keypair.json
+# Build outputs
+program/target/
+app/node_modules/
+app/dist/
+# Read-only reference clone (MagicBlock examples, MIT) — not our code
+reference/
+# Raw Playwright recordings (the MP4 demo in docs/ is kept)
+docs/ui-test/video/
+# Local env / OS
+.env
+.DS_Store
